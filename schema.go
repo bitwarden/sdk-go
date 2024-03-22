@@ -627,17 +627,35 @@ type LocalData struct {
 }
 
 type Login struct {
-	AutofillOnPageLoad   *bool      `json:"autofillOnPageLoad,omitempty"`
-	Password             *string    `json:"password,omitempty"`
-	PasswordRevisionDate *string    `json:"passwordRevisionDate,omitempty"`
-	Totp                 *string    `json:"totp,omitempty"`
-	Uris                 []LoginURI `json:"uris,omitempty"`
-	Username             *string    `json:"username,omitempty"`
+	AutofillOnPageLoad   *bool             `json:"autofillOnPageLoad,omitempty"`
+	Fido2Credentials     []Fido2Credential `json:"fido2Credentials,omitempty"`
+	Password             *string           `json:"password,omitempty"`
+	PasswordRevisionDate *string           `json:"passwordRevisionDate,omitempty"`
+	Totp                 *string           `json:"totp,omitempty"`
+	Uris                 []LoginURI        `json:"uris,omitempty"`
+	Username             *string           `json:"username,omitempty"`
+}
+
+type Fido2Credential struct {
+	Counter         string  `json:"counter"`
+	CreationDate    string  `json:"creationDate"`
+	CredentialID    string  `json:"credentialId"`
+	Discoverable    string  `json:"discoverable"`
+	KeyAlgorithm    string  `json:"keyAlgorithm"`
+	KeyCurve        string  `json:"keyCurve"`
+	KeyType         string  `json:"keyType"`
+	KeyValue        string  `json:"keyValue"`
+	RpID            string  `json:"rpId"`
+	RpName          *string `json:"rpName,omitempty"`
+	UserDisplayName *string `json:"userDisplayName,omitempty"`
+	UserHandle      *string `json:"userHandle,omitempty"`
+	UserName        *string `json:"userName,omitempty"`
 }
 
 type LoginURI struct {
-	Match *URIMatchType `json:"match,omitempty"`
-	URI   *string       `json:"uri,omitempty"`
+	Match       *URIMatchType `json:"match,omitempty"`
+	URI         *string       `json:"uri,omitempty"`
+	URIChecksum *string       `json:"uriChecksum,omitempty"`
 }
 
 type PasswordHistory struct {
