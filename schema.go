@@ -1,5 +1,7 @@
 package sdk
 
+type String string
+
 type EncString string
 
 // Basic client behavior settings. These settings specify the various targets and behavior
@@ -115,6 +117,11 @@ type PasswordLoginRequest struct {
 }
 
 // Kdf from prelogin
+//
+// Key Derivation Function for Bitwarden Account
+//
+// In Bitwarden accounts can use multiple KDFs to derive their master key from their
+// password. This Enum represents all the possible KDFs.
 type Kdf struct {
 	PBKDF2   *PBKDF2   `json:"pBKDF2,omitempty"`
 	Argon2ID *Argon2ID `json:"argon2id,omitempty"`
@@ -233,6 +240,13 @@ type ProjectPutRequest struct {
 //
 // Returns:
 // [SecretsDeleteResponse](bitwarden::secrets_manager::secrets::SecretsDeleteResponse)
+//
+// > Requires Authentication > Requires using an Access Token for login Retrieve the secrets
+// accessible by the authenticated machine account Optionally, provide the last synced date
+// to assess whether any changes have occurred If changes are detected, retrieves all the
+// secrets accessible by the authenticated machine account
+//
+// Returns: [SecretsSyncResponse](bitwarden::secrets_manager::secrets::SecretsSyncResponse)
 type SecretsCommand struct {
 	Get      *SecretGetRequest         `json:"get,omitempty"`
 	GetByIDS *SecretsGetRequest        `json:"getByIds,omitempty"`
@@ -240,6 +254,7 @@ type SecretsCommand struct {
 	List     *SecretIdentifiersRequest `json:"list,omitempty"`
 	Update   *SecretPutRequest         `json:"update,omitempty"`
 	Delete   *SecretsDeleteRequest     `json:"delete,omitempty"`
+	Sync     *SecretsSyncRequest       `json:"sync,omitempty"`
 }
 
 type SecretCreateRequest struct {
@@ -270,6 +285,13 @@ type SecretsGetRequest struct {
 type SecretIdentifiersRequest struct {
 	// Organization to retrieve all the secrets from       
 	OrganizationID                                  string `json:"organizationId"`
+}
+
+type SecretsSyncRequest struct {
+	// Optional date time a sync last occurred        
+	LastSyncedDate                            *string `json:"lastSyncedDate,omitempty"`
+	// Organization to sync secrets from              
+	OrganizationID                            string  `json:"organizationId"`
 }
 
 type SecretPutRequest struct {
@@ -460,6 +482,20 @@ type SecretsDeleteResponse struct {
 type SecretDeleteResponse struct {
 	Error *string `json:"error,omitempty"`
 	ID    string  `json:"id"`
+}
+
+type ResponseForSecretsSyncResponse struct {
+	// The response data. Populated if `success` is true.                                           
+	Data                                                                       *SecretsSyncResponse `json:"data,omitempty"`
+	// A message for any error that may occur. Populated if `success` is false.                     
+	ErrorMessage                                                               *string              `json:"errorMessage,omitempty"`
+	// Whether or not the SDK request succeeded.                                                    
+	Success                                                                    bool                 `json:"success"`
+}
+
+type SecretsSyncResponse struct {
+	HasChanges bool             `json:"hasChanges"`
+	Secrets    []SecretResponse `json:"secrets,omitempty"`
 }
 
 type ResponseForProjectResponse struct {
