@@ -59,7 +59,7 @@ type ClientSettings struct {
 // > Requires Authentication Retrieve all user data, ciphers and organizations the user is a
 // part of
 //
-// Returns: [SyncResponse](bitwarden::platform::SyncResponse)
+// Returns: [SyncResponse](bitwarden::vault::SyncResponse)
 type Command struct {
 	PasswordLogin    *PasswordLoginRequest      `json:"passwordLogin,omitempty"`
 	APIKeyLogin      *APIKeyLoginRequest        `json:"apiKeyLogin,omitempty"`
