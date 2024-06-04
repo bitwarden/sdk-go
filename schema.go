@@ -1,7 +1,5 @@
 package sdk
 
-type String string
-
 type EncString string
 
 // Basic client behavior settings. These settings specify the various targets and behavior
