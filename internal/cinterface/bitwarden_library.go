@@ -6,7 +6,7 @@ import (
 )
 
 /*
-#cgo LDFLAGS: -lm
+#cgo LDFLAGS: -lbitwarden_c
 #cgo linux,amd64 LDFLAGS: -L ./lib/linux-x64 -lm
 #cgo linux,arm64 LDFLAGS: -L ./lib/linux-arm64 -lm
 #cgo darwin,amd64 LDFLAGS: -L ./lib/darwin-x64 -framework Security -framework SystemConfiguration
