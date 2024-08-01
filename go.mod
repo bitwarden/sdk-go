@@ -1,3 +1,3 @@
-module github.com/bitwarden/sdk-go
+module github.com/mattscamp/sdk-go
 
 go 1.18
