@@ -1,6 +1,1248 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse and unparse this JSON data, add this code to your project and do:
+//
+//    clientSettings, err := UnmarshalClientSettings(bytes)
+//    bytes, err = clientSettings.Marshal()
+//
+//    deviceType, err := UnmarshalDeviceType(bytes)
+//    bytes, err = deviceType.Marshal()
+//
+//    command, err := UnmarshalCommand(bytes)
+//    bytes, err = command.Marshal()
+//
+//    passwordLoginRequest, err := UnmarshalPasswordLoginRequest(bytes)
+//    bytes, err = passwordLoginRequest.Marshal()
+//
+//    twoFactorRequest, err := UnmarshalTwoFactorRequest(bytes)
+//    bytes, err = twoFactorRequest.Marshal()
+//
+//    twoFactorProvider, err := UnmarshalTwoFactorProvider(bytes)
+//    bytes, err = twoFactorProvider.Marshal()
+//
+//    kdf, err := UnmarshalKdf(bytes)
+//    bytes, err = kdf.Marshal()
+//
+//    aPIKeyLoginRequest, err := UnmarshalAPIKeyLoginRequest(bytes)
+//    bytes, err = aPIKeyLoginRequest.Marshal()
+//
+//    accessTokenLoginRequest, err := UnmarshalAccessTokenLoginRequest(bytes)
+//    bytes, err = accessTokenLoginRequest.Marshal()
+//
+//    secretVerificationRequest, err := UnmarshalSecretVerificationRequest(bytes)
+//    bytes, err = secretVerificationRequest.Marshal()
+//
+//    fingerprintRequest, err := UnmarshalFingerprintRequest(bytes)
+//    bytes, err = fingerprintRequest.Marshal()
+//
+//    syncRequest, err := UnmarshalSyncRequest(bytes)
+//    bytes, err = syncRequest.Marshal()
+//
+//    secretsCommand, err := UnmarshalSecretsCommand(bytes)
+//    bytes, err = secretsCommand.Marshal()
+//
+//    secretGetRequest, err := UnmarshalSecretGetRequest(bytes)
+//    bytes, err = secretGetRequest.Marshal()
+//
+//    secretsGetRequest, err := UnmarshalSecretsGetRequest(bytes)
+//    bytes, err = secretsGetRequest.Marshal()
+//
+//    secretCreateRequest, err := UnmarshalSecretCreateRequest(bytes)
+//    bytes, err = secretCreateRequest.Marshal()
+//
+//    secretIdentifiersRequest, err := UnmarshalSecretIdentifiersRequest(bytes)
+//    bytes, err = secretIdentifiersRequest.Marshal()
+//
+//    secretPutRequest, err := UnmarshalSecretPutRequest(bytes)
+//    bytes, err = secretPutRequest.Marshal()
+//
+//    secretsDeleteRequest, err := UnmarshalSecretsDeleteRequest(bytes)
+//    bytes, err = secretsDeleteRequest.Marshal()
+//
+//    secretsSyncRequest, err := UnmarshalSecretsSyncRequest(bytes)
+//    bytes, err = secretsSyncRequest.Marshal()
+//
+//    projectsCommand, err := UnmarshalProjectsCommand(bytes)
+//    bytes, err = projectsCommand.Marshal()
+//
+//    projectGetRequest, err := UnmarshalProjectGetRequest(bytes)
+//    bytes, err = projectGetRequest.Marshal()
+//
+//    projectCreateRequest, err := UnmarshalProjectCreateRequest(bytes)
+//    bytes, err = projectCreateRequest.Marshal()
+//
+//    projectsListRequest, err := UnmarshalProjectsListRequest(bytes)
+//    bytes, err = projectsListRequest.Marshal()
+//
+//    projectPutRequest, err := UnmarshalProjectPutRequest(bytes)
+//    bytes, err = projectPutRequest.Marshal()
+//
+//    projectsDeleteRequest, err := UnmarshalProjectsDeleteRequest(bytes)
+//    bytes, err = projectsDeleteRequest.Marshal()
+//
+//    generatorsCommand, err := UnmarshalGeneratorsCommand(bytes)
+//    bytes, err = generatorsCommand.Marshal()
+//
+//    passwordGeneratorRequest, err := UnmarshalPasswordGeneratorRequest(bytes)
+//    bytes, err = passwordGeneratorRequest.Marshal()
+//
+//    responseForAPIKeyLoginResponse, err := UnmarshalResponseForAPIKeyLoginResponse(bytes)
+//    bytes, err = responseForAPIKeyLoginResponse.Marshal()
+//
+//    aPIKeyLoginResponse, err := UnmarshalAPIKeyLoginResponse(bytes)
+//    bytes, err = aPIKeyLoginResponse.Marshal()
+//
+//    twoFactorProviders, err := UnmarshalTwoFactorProviders(bytes)
+//    bytes, err = twoFactorProviders.Marshal()
+//
+//    authenticator, err := UnmarshalAuthenticator(bytes)
+//    bytes, err = authenticator.Marshal()
+//
+//    email, err := UnmarshalEmail(bytes)
+//    bytes, err = email.Marshal()
+//
+//    duo, err := UnmarshalDuo(bytes)
+//    bytes, err = duo.Marshal()
+//
+//    yubiKey, err := UnmarshalYubiKey(bytes)
+//    bytes, err = yubiKey.Marshal()
+//
+//    remember, err := UnmarshalRemember(bytes)
+//    bytes, err = remember.Marshal()
+//
+//    webAuthn, err := UnmarshalWebAuthn(bytes)
+//    bytes, err = webAuthn.Marshal()
+//
+//    responseForPasswordLoginResponse, err := UnmarshalResponseForPasswordLoginResponse(bytes)
+//    bytes, err = responseForPasswordLoginResponse.Marshal()
+//
+//    passwordLoginResponse, err := UnmarshalPasswordLoginResponse(bytes)
+//    bytes, err = passwordLoginResponse.Marshal()
+//
+//    cAPTCHAResponse, err := UnmarshalCAPTCHAResponse(bytes)
+//    bytes, err = cAPTCHAResponse.Marshal()
+//
+//    responseForAccessTokenLoginResponse, err := UnmarshalResponseForAccessTokenLoginResponse(bytes)
+//    bytes, err = responseForAccessTokenLoginResponse.Marshal()
+//
+//    accessTokenLoginResponse, err := UnmarshalAccessTokenLoginResponse(bytes)
+//    bytes, err = accessTokenLoginResponse.Marshal()
+//
+//    responseForSecretIdentifiersResponse, err := UnmarshalResponseForSecretIdentifiersResponse(bytes)
+//    bytes, err = responseForSecretIdentifiersResponse.Marshal()
+//
+//    secretIdentifiersResponse, err := UnmarshalSecretIdentifiersResponse(bytes)
+//    bytes, err = secretIdentifiersResponse.Marshal()
+//
+//    secretIdentifierResponse, err := UnmarshalSecretIdentifierResponse(bytes)
+//    bytes, err = secretIdentifierResponse.Marshal()
+//
+//    responseForSecretResponse, err := UnmarshalResponseForSecretResponse(bytes)
+//    bytes, err = responseForSecretResponse.Marshal()
+//
+//    secretResponse, err := UnmarshalSecretResponse(bytes)
+//    bytes, err = secretResponse.Marshal()
+//
+//    responseForSecretsResponse, err := UnmarshalResponseForSecretsResponse(bytes)
+//    bytes, err = responseForSecretsResponse.Marshal()
+//
+//    secretsResponse, err := UnmarshalSecretsResponse(bytes)
+//    bytes, err = secretsResponse.Marshal()
+//
+//    responseForSecretsDeleteResponse, err := UnmarshalResponseForSecretsDeleteResponse(bytes)
+//    bytes, err = responseForSecretsDeleteResponse.Marshal()
+//
+//    secretsDeleteResponse, err := UnmarshalSecretsDeleteResponse(bytes)
+//    bytes, err = secretsDeleteResponse.Marshal()
+//
+//    secretDeleteResponse, err := UnmarshalSecretDeleteResponse(bytes)
+//    bytes, err = secretDeleteResponse.Marshal()
+//
+//    responseForSecretsSyncResponse, err := UnmarshalResponseForSecretsSyncResponse(bytes)
+//    bytes, err = responseForSecretsSyncResponse.Marshal()
+//
+//    secretsSyncResponse, err := UnmarshalSecretsSyncResponse(bytes)
+//    bytes, err = secretsSyncResponse.Marshal()
+//
+//    responseForProjectResponse, err := UnmarshalResponseForProjectResponse(bytes)
+//    bytes, err = responseForProjectResponse.Marshal()
+//
+//    projectResponse, err := UnmarshalProjectResponse(bytes)
+//    bytes, err = projectResponse.Marshal()
+//
+//    responseForProjectsResponse, err := UnmarshalResponseForProjectsResponse(bytes)
+//    bytes, err = responseForProjectsResponse.Marshal()
+//
+//    projectsResponse, err := UnmarshalProjectsResponse(bytes)
+//    bytes, err = projectsResponse.Marshal()
+//
+//    responseForProjectsDeleteResponse, err := UnmarshalResponseForProjectsDeleteResponse(bytes)
+//    bytes, err = responseForProjectsDeleteResponse.Marshal()
+//
+//    projectsDeleteResponse, err := UnmarshalProjectsDeleteResponse(bytes)
+//    bytes, err = projectsDeleteResponse.Marshal()
+//
+//    projectDeleteResponse, err := UnmarshalProjectDeleteResponse(bytes)
+//    bytes, err = projectDeleteResponse.Marshal()
+//
+//    responseForString, err := UnmarshalResponseForString(bytes)
+//    bytes, err = responseForString.Marshal()
+//
+//    responseForFingerprintResponse, err := UnmarshalResponseForFingerprintResponse(bytes)
+//    bytes, err = responseForFingerprintResponse.Marshal()
+//
+//    fingerprintResponse, err := UnmarshalFingerprintResponse(bytes)
+//    bytes, err = fingerprintResponse.Marshal()
+//
+//    responseForSyncResponse, err := UnmarshalResponseForSyncResponse(bytes)
+//    bytes, err = responseForSyncResponse.Marshal()
+//
+//    syncResponse, err := UnmarshalSyncResponse(bytes)
+//    bytes, err = syncResponse.Marshal()
+//
+//    profileResponse, err := UnmarshalProfileResponse(bytes)
+//    bytes, err = profileResponse.Marshal()
+//
+//    profileOrganizationResponse, err := UnmarshalProfileOrganizationResponse(bytes)
+//    bytes, err = profileOrganizationResponse.Marshal()
+//
+//    folder, err := UnmarshalFolder(bytes)
+//    bytes, err = folder.Marshal()
+//
+//    encString, err := UnmarshalEncString(bytes)
+//    bytes, err = encString.Marshal()
+//
+//    collection, err := UnmarshalCollection(bytes)
+//    bytes, err = collection.Marshal()
+//
+//    cipher, err := UnmarshalCipher(bytes)
+//    bytes, err = cipher.Marshal()
+//
+//    cipherType, err := UnmarshalCipherType(bytes)
+//    bytes, err = cipherType.Marshal()
+//
+//    login, err := UnmarshalLogin(bytes)
+//    bytes, err = login.Marshal()
+//
+//    loginURI, err := UnmarshalLoginURI(bytes)
+//    bytes, err = loginURI.Marshal()
+//
+//    uRIMatchType, err := UnmarshalURIMatchType(bytes)
+//    bytes, err = uRIMatchType.Marshal()
+//
+//    fido2Credential, err := UnmarshalFido2Credential(bytes)
+//    bytes, err = fido2Credential.Marshal()
+//
+//    identity, err := UnmarshalIdentity(bytes)
+//    bytes, err = identity.Marshal()
+//
+//    card, err := UnmarshalCard(bytes)
+//    bytes, err = card.Marshal()
+//
+//    secureNote, err := UnmarshalSecureNote(bytes)
+//    bytes, err = secureNote.Marshal()
+//
+//    secureNoteType, err := UnmarshalSecureNoteType(bytes)
+//    bytes, err = secureNoteType.Marshal()
+//
+//    cipherRepromptType, err := UnmarshalCipherRepromptType(bytes)
+//    bytes, err = cipherRepromptType.Marshal()
+//
+//    localData, err := UnmarshalLocalData(bytes)
+//    bytes, err = localData.Marshal()
+//
+//    attachment, err := UnmarshalAttachment(bytes)
+//    bytes, err = attachment.Marshal()
+//
+//    field, err := UnmarshalField(bytes)
+//    bytes, err = field.Marshal()
+//
+//    fieldType, err := UnmarshalFieldType(bytes)
+//    bytes, err = fieldType.Marshal()
+//
+//    linkedIDType, err := UnmarshalLinkedIDType(bytes)
+//    bytes, err = linkedIDType.Marshal()
+//
+//    loginLinkedIDType, err := UnmarshalLoginLinkedIDType(bytes)
+//    bytes, err = loginLinkedIDType.Marshal()
+//
+//    cardLinkedIDType, err := UnmarshalCardLinkedIDType(bytes)
+//    bytes, err = cardLinkedIDType.Marshal()
+//
+//    identityLinkedIDType, err := UnmarshalIdentityLinkedIDType(bytes)
+//    bytes, err = identityLinkedIDType.Marshal()
+//
+//    passwordHistory, err := UnmarshalPasswordHistory(bytes)
+//    bytes, err = passwordHistory.Marshal()
+//
+//    domainResponse, err := UnmarshalDomainResponse(bytes)
+//    bytes, err = domainResponse.Marshal()
+//
+//    globalDomains, err := UnmarshalGlobalDomains(bytes)
+//    bytes, err = globalDomains.Marshal()
+//
+//    responseForUserAPIKeyResponse, err := UnmarshalResponseForUserAPIKeyResponse(bytes)
+//    bytes, err = responseForUserAPIKeyResponse.Marshal()
+//
+//    userAPIKeyResponse, err := UnmarshalUserAPIKeyResponse(bytes)
+//    bytes, err = userAPIKeyResponse.Marshal()
+
 package sdk
 
+import "time"
+
+import "encoding/json"
+
+func UnmarshalClientSettings(data []byte) (ClientSettings, error) {
+	var r ClientSettings
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ClientSettings) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalDeviceType(data []byte) (DeviceType, error) {
+	var r DeviceType
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *DeviceType) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalCommand(data []byte) (Command, error) {
+	var r Command
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Command) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalPasswordLoginRequest(data []byte) (PasswordLoginRequest, error) {
+	var r PasswordLoginRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *PasswordLoginRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalTwoFactorRequest(data []byte) (TwoFactorRequest, error) {
+	var r TwoFactorRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *TwoFactorRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalTwoFactorProvider(data []byte) (TwoFactorProvider, error) {
+	var r TwoFactorProvider
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *TwoFactorProvider) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalKdf(data []byte) (Kdf, error) {
+	var r Kdf
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Kdf) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalAPIKeyLoginRequest(data []byte) (APIKeyLoginRequest, error) {
+	var r APIKeyLoginRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *APIKeyLoginRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalAccessTokenLoginRequest(data []byte) (AccessTokenLoginRequest, error) {
+	var r AccessTokenLoginRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *AccessTokenLoginRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretVerificationRequest(data []byte) (SecretVerificationRequest, error) {
+	var r SecretVerificationRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretVerificationRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalFingerprintRequest(data []byte) (FingerprintRequest, error) {
+	var r FingerprintRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *FingerprintRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSyncRequest(data []byte) (SyncRequest, error) {
+	var r SyncRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SyncRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretsCommand(data []byte) (SecretsCommand, error) {
+	var r SecretsCommand
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretsCommand) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretGetRequest(data []byte) (SecretGetRequest, error) {
+	var r SecretGetRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretGetRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretsGetRequest(data []byte) (SecretsGetRequest, error) {
+	var r SecretsGetRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretsGetRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretCreateRequest(data []byte) (SecretCreateRequest, error) {
+	var r SecretCreateRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretCreateRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretIdentifiersRequest(data []byte) (SecretIdentifiersRequest, error) {
+	var r SecretIdentifiersRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretIdentifiersRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretPutRequest(data []byte) (SecretPutRequest, error) {
+	var r SecretPutRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretPutRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretsDeleteRequest(data []byte) (SecretsDeleteRequest, error) {
+	var r SecretsDeleteRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretsDeleteRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretsSyncRequest(data []byte) (SecretsSyncRequest, error) {
+	var r SecretsSyncRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretsSyncRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProjectsCommand(data []byte) (ProjectsCommand, error) {
+	var r ProjectsCommand
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProjectsCommand) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProjectGetRequest(data []byte) (ProjectGetRequest, error) {
+	var r ProjectGetRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProjectGetRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProjectCreateRequest(data []byte) (ProjectCreateRequest, error) {
+	var r ProjectCreateRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProjectCreateRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProjectsListRequest(data []byte) (ProjectsListRequest, error) {
+	var r ProjectsListRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProjectsListRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProjectPutRequest(data []byte) (ProjectPutRequest, error) {
+	var r ProjectPutRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProjectPutRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProjectsDeleteRequest(data []byte) (ProjectsDeleteRequest, error) {
+	var r ProjectsDeleteRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProjectsDeleteRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalGeneratorsCommand(data []byte) (GeneratorsCommand, error) {
+	var r GeneratorsCommand
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *GeneratorsCommand) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalPasswordGeneratorRequest(data []byte) (PasswordGeneratorRequest, error) {
+	var r PasswordGeneratorRequest
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *PasswordGeneratorRequest) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForAPIKeyLoginResponse(data []byte) (ResponseForAPIKeyLoginResponse, error) {
+	var r ResponseForAPIKeyLoginResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForAPIKeyLoginResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalAPIKeyLoginResponse(data []byte) (APIKeyLoginResponse, error) {
+	var r APIKeyLoginResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *APIKeyLoginResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalTwoFactorProviders(data []byte) (TwoFactorProviders, error) {
+	var r TwoFactorProviders
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *TwoFactorProviders) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalAuthenticator(data []byte) (Authenticator, error) {
+	var r Authenticator
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Authenticator) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalEmail(data []byte) (Email, error) {
+	var r Email
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Email) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalDuo(data []byte) (Duo, error) {
+	var r Duo
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Duo) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalYubiKey(data []byte) (YubiKey, error) {
+	var r YubiKey
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *YubiKey) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalRemember(data []byte) (Remember, error) {
+	var r Remember
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Remember) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalWebAuthn(data []byte) (WebAuthn, error) {
+	var r WebAuthn
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *WebAuthn) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForPasswordLoginResponse(data []byte) (ResponseForPasswordLoginResponse, error) {
+	var r ResponseForPasswordLoginResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForPasswordLoginResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalPasswordLoginResponse(data []byte) (PasswordLoginResponse, error) {
+	var r PasswordLoginResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *PasswordLoginResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalCAPTCHAResponse(data []byte) (CAPTCHAResponse, error) {
+	var r CAPTCHAResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *CAPTCHAResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForAccessTokenLoginResponse(data []byte) (ResponseForAccessTokenLoginResponse, error) {
+	var r ResponseForAccessTokenLoginResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForAccessTokenLoginResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalAccessTokenLoginResponse(data []byte) (AccessTokenLoginResponse, error) {
+	var r AccessTokenLoginResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *AccessTokenLoginResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForSecretIdentifiersResponse(data []byte) (ResponseForSecretIdentifiersResponse, error) {
+	var r ResponseForSecretIdentifiersResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForSecretIdentifiersResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretIdentifiersResponse(data []byte) (SecretIdentifiersResponse, error) {
+	var r SecretIdentifiersResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretIdentifiersResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretIdentifierResponse(data []byte) (SecretIdentifierResponse, error) {
+	var r SecretIdentifierResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretIdentifierResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForSecretResponse(data []byte) (ResponseForSecretResponse, error) {
+	var r ResponseForSecretResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForSecretResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretResponse(data []byte) (SecretResponse, error) {
+	var r SecretResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForSecretsResponse(data []byte) (ResponseForSecretsResponse, error) {
+	var r ResponseForSecretsResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForSecretsResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretsResponse(data []byte) (SecretsResponse, error) {
+	var r SecretsResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretsResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForSecretsDeleteResponse(data []byte) (ResponseForSecretsDeleteResponse, error) {
+	var r ResponseForSecretsDeleteResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForSecretsDeleteResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretsDeleteResponse(data []byte) (SecretsDeleteResponse, error) {
+	var r SecretsDeleteResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretsDeleteResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretDeleteResponse(data []byte) (SecretDeleteResponse, error) {
+	var r SecretDeleteResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretDeleteResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForSecretsSyncResponse(data []byte) (ResponseForSecretsSyncResponse, error) {
+	var r ResponseForSecretsSyncResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForSecretsSyncResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecretsSyncResponse(data []byte) (SecretsSyncResponse, error) {
+	var r SecretsSyncResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecretsSyncResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForProjectResponse(data []byte) (ResponseForProjectResponse, error) {
+	var r ResponseForProjectResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForProjectResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProjectResponse(data []byte) (ProjectResponse, error) {
+	var r ProjectResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProjectResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForProjectsResponse(data []byte) (ResponseForProjectsResponse, error) {
+	var r ResponseForProjectsResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForProjectsResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProjectsResponse(data []byte) (ProjectsResponse, error) {
+	var r ProjectsResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProjectsResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForProjectsDeleteResponse(data []byte) (ResponseForProjectsDeleteResponse, error) {
+	var r ResponseForProjectsDeleteResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForProjectsDeleteResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProjectsDeleteResponse(data []byte) (ProjectsDeleteResponse, error) {
+	var r ProjectsDeleteResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProjectsDeleteResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProjectDeleteResponse(data []byte) (ProjectDeleteResponse, error) {
+	var r ProjectDeleteResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProjectDeleteResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForString(data []byte) (ResponseForString, error) {
+	var r ResponseForString
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForString) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForFingerprintResponse(data []byte) (ResponseForFingerprintResponse, error) {
+	var r ResponseForFingerprintResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForFingerprintResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalFingerprintResponse(data []byte) (FingerprintResponse, error) {
+	var r FingerprintResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *FingerprintResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForSyncResponse(data []byte) (ResponseForSyncResponse, error) {
+	var r ResponseForSyncResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForSyncResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSyncResponse(data []byte) (SyncResponse, error) {
+	var r SyncResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SyncResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProfileResponse(data []byte) (ProfileResponse, error) {
+	var r ProfileResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProfileResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalProfileOrganizationResponse(data []byte) (ProfileOrganizationResponse, error) {
+	var r ProfileOrganizationResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ProfileOrganizationResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalFolder(data []byte) (Folder, error) {
+	var r Folder
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Folder) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
 type EncString string
+
+func UnmarshalEncString(data []byte) (EncString, error) {
+	var r EncString
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *EncString) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalCollection(data []byte) (Collection, error) {
+	var r Collection
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Collection) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalCipher(data []byte) (Cipher, error) {
+	var r Cipher
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Cipher) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalCipherType(data []byte) (CipherType, error) {
+	var r CipherType
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *CipherType) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalLogin(data []byte) (Login, error) {
+	var r Login
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Login) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalLoginURI(data []byte) (LoginURI, error) {
+	var r LoginURI
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *LoginURI) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalURIMatchType(data []byte) (URIMatchType, error) {
+	var r URIMatchType
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *URIMatchType) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalFido2Credential(data []byte) (Fido2Credential, error) {
+	var r Fido2Credential
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Fido2Credential) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalIdentity(data []byte) (Identity, error) {
+	var r Identity
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Identity) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalCard(data []byte) (Card, error) {
+	var r Card
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Card) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecureNote(data []byte) (SecureNote, error) {
+	var r SecureNote
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecureNote) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalSecureNoteType(data []byte) (SecureNoteType, error) {
+	var r SecureNoteType
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *SecureNoteType) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalCipherRepromptType(data []byte) (CipherRepromptType, error) {
+	var r CipherRepromptType
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *CipherRepromptType) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalLocalData(data []byte) (LocalData, error) {
+	var r LocalData
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *LocalData) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalAttachment(data []byte) (Attachment, error) {
+	var r Attachment
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Attachment) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalField(data []byte) (Field, error) {
+	var r Field
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *Field) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalFieldType(data []byte) (FieldType, error) {
+	var r FieldType
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *FieldType) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalLinkedIDType(data []byte) (LinkedIDType, error) {
+	var r LinkedIDType
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *LinkedIDType) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalLoginLinkedIDType(data []byte) (LoginLinkedIDType, error) {
+	var r LoginLinkedIDType
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *LoginLinkedIDType) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalCardLinkedIDType(data []byte) (CardLinkedIDType, error) {
+	var r CardLinkedIDType
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *CardLinkedIDType) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalIdentityLinkedIDType(data []byte) (IdentityLinkedIDType, error) {
+	var r IdentityLinkedIDType
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *IdentityLinkedIDType) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalPasswordHistory(data []byte) (PasswordHistory, error) {
+	var r PasswordHistory
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *PasswordHistory) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalDomainResponse(data []byte) (DomainResponse, error) {
+	var r DomainResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *DomainResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalGlobalDomains(data []byte) (GlobalDomains, error) {
+	var r GlobalDomains
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *GlobalDomains) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalResponseForUserAPIKeyResponse(data []byte) (ResponseForUserAPIKeyResponse, error) {
+	var r ResponseForUserAPIKeyResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *ResponseForUserAPIKeyResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
+
+func UnmarshalUserAPIKeyResponse(data []byte) (UserAPIKeyResponse, error) {
+	var r UserAPIKeyResponse
+	err := json.Unmarshal(data, &r)
+	return r, err
+}
+
+func (r *UserAPIKeyResponse) Marshal() ([]byte, error) {
+	return json.Marshal(r)
+}
 
 // Basic client behavior settings. These settings specify the various targets and behavior
 // of the Bitwarden Client. They are optional and uneditable once the client is
@@ -8,8 +1250,8 @@ type EncString string
 //
 // Defaults to
 //
-// ``` # use bitwarden::client::client_settings::{ClientSettings, DeviceType}; let settings
-// = ClientSettings { identity_url: "https://identity.bitwarden.com".to_string(), api_url:
+// ``` # use bitwarden_core::{ClientSettings, DeviceType}; let settings = ClientSettings {
+// identity_url: "https://identity.bitwarden.com".to_string(), api_url:
 // "https://api.bitwarden.com".to_string(), user_agent: "Bitwarden Rust-SDK".to_string(),
 // device_type: DeviceType::SDK, }; let default = ClientSettings::default(); ```
 type ClientSettings struct {
@@ -61,12 +1303,13 @@ type ClientSettings struct {
 type Command struct {
 	PasswordLogin    *PasswordLoginRequest      `json:"passwordLogin,omitempty"`
 	APIKeyLogin      *APIKeyLoginRequest        `json:"apiKeyLogin,omitempty"`
-	AccessTokenLogin *AccessTokenLoginRequest   `json:"accessTokenLogin,omitempty"`
+	LoginAccessToken *AccessTokenLoginRequest   `json:"loginAccessToken,omitempty"`
 	GetUserAPIKey    *SecretVerificationRequest `json:"getUserApiKey,omitempty"`
 	Fingerprint      *FingerprintRequest        `json:"fingerprint,omitempty"`
 	Sync             *SyncRequest               `json:"sync,omitempty"`
 	Secrets          *SecretsCommand            `json:"secrets,omitempty"`
 	Projects         *ProjectsCommand           `json:"projects,omitempty"`
+	Generators       *GeneratorsCommand         `json:"generators,omitempty"`
 }
 
 // Login to Bitwarden with Api Key
@@ -79,18 +1322,48 @@ type APIKeyLoginRequest struct {
 	Password                            string `json:"password"`
 }
 
-// Login to Bitwarden with access token
-type AccessTokenLoginRequest struct {
-	// Bitwarden service API access token        
-	AccessToken                          string  `json:"accessToken"`
-	StateFile                            *string `json:"stateFile,omitempty"`
-}
-
 type FingerprintRequest struct {
 	// The input material, used in the fingerprint generation process.       
 	FingerprintMaterial                                               string `json:"fingerprintMaterial"`
 	// The user's public key encoded with base64.                            
 	PublicKey                                                         string `json:"publicKey"`
+}
+
+// Generate a password
+//
+// Returns: [String]
+type GeneratorsCommand struct {
+	GeneratePassword PasswordGeneratorRequest `json:"generatePassword"`
+}
+
+// Password generator request options.
+type PasswordGeneratorRequest struct {
+	// When set to true, the generated password will not contain ambiguous characters. The             
+	// ambiguous characters are: I, O, l, 0, 1                                                         
+	AvoidAmbiguous                                                                              bool   `json:"avoidAmbiguous"`
+	// The length of the generated password. Note that the password length must be greater than        
+	// the sum of all the minimums.                                                                    
+	Length                                                                                      int64  `json:"length"`
+	// Include lowercase characters (a-z).                                                             
+	Lowercase                                                                                   bool   `json:"lowercase"`
+	// The minimum number of lowercase characters in the generated password. When set, the value       
+	// must be between 1 and 9. This value is ignored if lowercase is false.                           
+	MinLowercase                                                                                *int64 `json:"minLowercase,omitempty"`
+	// The minimum number of numbers in the generated password. When set, the value must be            
+	// between 1 and 9. This value is ignored if numbers is false.                                     
+	MinNumber                                                                                   *int64 `json:"minNumber,omitempty"`
+	// The minimum number of special characters in the generated password. When set, the value         
+	// must be between 1 and 9. This value is ignored if special is false.                             
+	MinSpecial                                                                                  *int64 `json:"minSpecial,omitempty"`
+	// The minimum number of uppercase characters in the generated password. When set, the value       
+	// must be between 1 and 9. This value is ignored if uppercase is false.                           
+	MinUppercase                                                                                *int64 `json:"minUppercase,omitempty"`
+	// Include numbers (0-9).                                                                          
+	Numbers                                                                                     bool   `json:"numbers"`
+	// Include special characters: ! @ # $ % ^ & *                                                     
+	Special                                                                                     bool   `json:"special"`
+	// Include uppercase characters (A-Z).                                                             
+	Uppercase                                                                                   bool   `json:"uppercase"`
 }
 
 type SecretVerificationRequest struct {
@@ -101,6 +1374,13 @@ type SecretVerificationRequest struct {
 	// master password due to use of Customer Managed Encryption. Must be present and valid if        
 	// master_password is absent.                                                                     
 	Otp                                                                                       *string `json:"otp,omitempty"`
+}
+
+// Login to Bitwarden with access token
+type AccessTokenLoginRequest struct {
+	// Bitwarden service API access token        
+	AccessToken                          string  `json:"accessToken"`
+	StateFile                            *string `json:"stateFile,omitempty"`
 }
 
 // Login to Bitwarden with Username and Password
@@ -286,10 +1566,10 @@ type SecretIdentifiersRequest struct {
 }
 
 type SecretsSyncRequest struct {
-	// Optional date time a sync last occurred        
-	LastSyncedDate                            *string `json:"lastSyncedDate,omitempty"`
-	// Organization to sync secrets from              
-	OrganizationID                            string  `json:"organizationId"`
+	// Optional date time a sync last occurred           
+	LastSyncedDate                            *time.Time `json:"lastSyncedDate,omitempty"`
+	// Organization to sync secrets from                 
+	OrganizationID                            string     `json:"organizationId"`
 }
 
 type SecretPutRequest struct {
@@ -441,14 +1721,14 @@ type ResponseForSecretResponse struct {
 }
 
 type SecretResponse struct {
-	CreationDate   string  `json:"creationDate"`
-	ID             string  `json:"id"`
-	Key            string  `json:"key"`
-	Note           string  `json:"note"`
-	OrganizationID string  `json:"organizationId"`
-	ProjectID      *string `json:"projectId,omitempty"`
-	RevisionDate   string  `json:"revisionDate"`
-	Value          string  `json:"value"`
+	CreationDate   time.Time `json:"creationDate"`
+	ID             string    `json:"id"`
+	Key            string    `json:"key"`
+	Note           string    `json:"note"`
+	OrganizationID string    `json:"organizationId"`
+	ProjectID      *string   `json:"projectId,omitempty"`
+	RevisionDate   time.Time `json:"revisionDate"`
+	Value          string    `json:"value"`
 }
 
 type ResponseForSecretsResponse struct {
@@ -506,11 +1786,11 @@ type ResponseForProjectResponse struct {
 }
 
 type ProjectResponse struct {
-	CreationDate   string `json:"creationDate"`
-	ID             string `json:"id"`
-	Name           string `json:"name"`
-	OrganizationID string `json:"organizationId"`
-	RevisionDate   string `json:"revisionDate"`
+	CreationDate   time.Time `json:"creationDate"`
+	ID             string    `json:"id"`
+	Name           string    `json:"name"`
+	OrganizationID string    `json:"organizationId"`
+	RevisionDate   time.Time `json:"revisionDate"`
 }
 
 type ResponseForProjectsResponse struct {
@@ -544,6 +1824,15 @@ type ProjectDeleteResponse struct {
 	ID    string  `json:"id"`
 }
 
+type ResponseForString struct {
+	// The response data. Populated if `success` is true.                              
+	Data                                                                       *string `json:"data,omitempty"`
+	// A message for any error that may occur. Populated if `success` is false.        
+	ErrorMessage                                                               *string `json:"errorMessage,omitempty"`
+	// Whether or not the SDK request succeeded.                                       
+	Success                                                                    bool    `json:"success"`
+}
+
 type ResponseForFingerprintResponse struct {
 	// The response data. Populated if `success` is true.                                           
 	Data                                                                       *FingerprintResponse `json:"data,omitempty"`
@@ -572,19 +1861,17 @@ type SyncResponse struct {
 	Collections                                                                             []Collection    `json:"collections"`
 	Domains                                                                                 *DomainResponse `json:"domains,omitempty"`
 	Folders                                                                                 []Folder        `json:"folders"`
-	Policies                                                                                []Policy        `json:"policies"`
 	// Data about the user, including their encryption keys and the organizations they are a                
 	// part of                                                                                              
 	Profile                                                                                 ProfileResponse `json:"profile"`
-	Sends                                                                                   []Send          `json:"sends"`
 }
 
 type Cipher struct {
 	Attachments                                                                              []Attachment       `json:"attachments,omitempty"`
 	Card                                                                                     *Card              `json:"card,omitempty"`
 	CollectionIDS                                                                            []string           `json:"collectionIds"`
-	CreationDate                                                                             string             `json:"creationDate"`
-	DeletedDate                                                                              *string            `json:"deletedDate,omitempty"`
+	CreationDate                                                                             time.Time          `json:"creationDate"`
+	DeletedDate                                                                              *time.Time         `json:"deletedDate,omitempty"`
 	Edit                                                                                     bool               `json:"edit"`
 	Favorite                                                                                 bool               `json:"favorite"`
 	Fields                                                                                   []Field            `json:"fields,omitempty"`
@@ -602,7 +1889,7 @@ type Cipher struct {
 	OrganizationUseTotp                                                                      bool               `json:"organizationUseTotp"`
 	PasswordHistory                                                                          []PasswordHistory  `json:"passwordHistory,omitempty"`
 	Reprompt                                                                                 CipherRepromptType `json:"reprompt"`
-	RevisionDate                                                                             string             `json:"revisionDate"`
+	RevisionDate                                                                             time.Time          `json:"revisionDate"`
 	SecureNote                                                                               *SecureNote        `json:"secureNote,omitempty"`
 	Type                                                                                     CipherType         `json:"type"`
 	ViewPassword                                                                             bool               `json:"viewPassword"`
@@ -664,26 +1951,26 @@ type Login struct {
 	AutofillOnPageLoad   *bool             `json:"autofillOnPageLoad,omitempty"`
 	Fido2Credentials     []Fido2Credential `json:"fido2Credentials,omitempty"`
 	Password             *string           `json:"password,omitempty"`
-	PasswordRevisionDate *string           `json:"passwordRevisionDate,omitempty"`
+	PasswordRevisionDate *time.Time        `json:"passwordRevisionDate,omitempty"`
 	Totp                 *string           `json:"totp,omitempty"`
 	Uris                 []LoginURI        `json:"uris,omitempty"`
 	Username             *string           `json:"username,omitempty"`
 }
 
 type Fido2Credential struct {
-	Counter         string  `json:"counter"`
-	CreationDate    string  `json:"creationDate"`
-	CredentialID    string  `json:"credentialId"`
-	Discoverable    string  `json:"discoverable"`
-	KeyAlgorithm    string  `json:"keyAlgorithm"`
-	KeyCurve        string  `json:"keyCurve"`
-	KeyType         string  `json:"keyType"`
-	KeyValue        string  `json:"keyValue"`
-	RpID            string  `json:"rpId"`
-	RpName          *string `json:"rpName,omitempty"`
-	UserDisplayName *string `json:"userDisplayName,omitempty"`
-	UserHandle      *string `json:"userHandle,omitempty"`
-	UserName        *string `json:"userName,omitempty"`
+	Counter         string    `json:"counter"`
+	CreationDate    time.Time `json:"creationDate"`
+	CredentialID    string    `json:"credentialId"`
+	Discoverable    string    `json:"discoverable"`
+	KeyAlgorithm    string    `json:"keyAlgorithm"`
+	KeyCurve        string    `json:"keyCurve"`
+	KeyType         string    `json:"keyType"`
+	KeyValue        string    `json:"keyValue"`
+	RpID            string    `json:"rpId"`
+	RpName          *string   `json:"rpName,omitempty"`
+	UserDisplayName *string   `json:"userDisplayName,omitempty"`
+	UserHandle      *string   `json:"userHandle,omitempty"`
+	UserName        *string   `json:"userName,omitempty"`
 }
 
 type LoginURI struct {
@@ -693,8 +1980,8 @@ type LoginURI struct {
 }
 
 type PasswordHistory struct {
-	LastUsedDate string `json:"lastUsedDate"`
-	Password     string `json:"password"`
+	LastUsedDate time.Time `json:"lastUsedDate"`
+	Password     string    `json:"password"`
 }
 
 type SecureNote struct {
@@ -722,17 +2009,9 @@ type GlobalDomains struct {
 }
 
 type Folder struct {
-	ID           *string `json:"id,omitempty"`
-	Name         string  `json:"name"`
-	RevisionDate string  `json:"revisionDate"`
-}
-
-type Policy struct {
-	Data           map[string]interface{} `json:"data,omitempty"`
-	Enabled        bool                   `json:"enabled"`
-	ID             string                 `json:"id"`
-	OrganizationID string                 `json:"organization_id"`
-	Type           PolicyType             `json:"type"`
+	ID           *string   `json:"id,omitempty"`
+	Name         string    `json:"name"`
+	RevisionDate time.Time `json:"revisionDate"`
 }
 
 // Data about the user, including their encryption keys and the organizations they are a
@@ -746,38 +2025,6 @@ type ProfileResponse struct {
 
 type ProfileOrganizationResponse struct {
 	ID string `json:"id"`
-}
-
-type Send struct {
-	AccessCount    int64     `json:"accessCount"`
-	AccessID       *string   `json:"accessId,omitempty"`
-	DeletionDate   string    `json:"deletionDate"`
-	Disabled       bool      `json:"disabled"`
-	ExpirationDate *string   `json:"expirationDate,omitempty"`
-	File           *SendFile `json:"file,omitempty"`
-	HideEmail      bool      `json:"hideEmail"`
-	ID             *string   `json:"id,omitempty"`
-	Key            string    `json:"key"`
-	MaxAccessCount *int64    `json:"maxAccessCount,omitempty"`
-	Name           string    `json:"name"`
-	Notes          *string   `json:"notes,omitempty"`
-	Password       *string   `json:"password,omitempty"`
-	RevisionDate   string    `json:"revisionDate"`
-	Text           *SendText `json:"text,omitempty"`
-	Type           SendType  `json:"type"`
-}
-
-type SendFile struct {
-	FileName                                   string  `json:"fileName"`
-	ID                                         *string `json:"id,omitempty"`
-	Size                                       *string `json:"size,omitempty"`
-	// Readable size, ex: "4.2 KB" or "1.43 GB"        
-	SizeName                                   *string `json:"sizeName,omitempty"`
-}
-
-type SendText struct {
-	Hidden bool    `json:"hidden"`
-	Text   *string `json:"text,omitempty"`
 }
 
 type ResponseForUserAPIKeyResponse struct {
@@ -870,10 +2117,10 @@ const (
 type FieldType string
 
 const (
-	Boolean       FieldType = "Boolean"
-	FieldTypeText FieldType = "Text"
-	Hidden        FieldType = "Hidden"
-	Linked        FieldType = "Linked"
+	Boolean FieldType = "Boolean"
+	Hidden  FieldType = "Hidden"
+	Linked  FieldType = "Linked"
+	Text    FieldType = "Text"
 )
 
 type URIMatchType string
@@ -907,30 +2154,6 @@ const (
 	CipherTypeIdentity   CipherType = "Identity"
 	CipherTypeLogin      CipherType = "Login"
 	CipherTypeSecureNote CipherType = "SecureNote"
-)
-
-type PolicyType string
-
-const (
-	ActivateAutofill           PolicyType = "ActivateAutofill"
-	DisablePersonalVaultExport PolicyType = "DisablePersonalVaultExport"
-	DisableSend                PolicyType = "DisableSend"
-	MasterPassword             PolicyType = "MasterPassword"
-	MaximumVaultTimeout        PolicyType = "MaximumVaultTimeout"
-	PasswordGenerator          PolicyType = "PasswordGenerator"
-	PersonalOwnership          PolicyType = "PersonalOwnership"
-	RequireSso                 PolicyType = "RequireSso"
-	ResetPassword              PolicyType = "ResetPassword"
-	SendOptions                PolicyType = "SendOptions"
-	SingleOrg                  PolicyType = "SingleOrg"
-	TwoFactorAuthentication    PolicyType = "TwoFactorAuthentication"
-)
-
-type SendType string
-
-const (
-	File         SendType = "File"
-	SendTypeText SendType = "Text"
 )
 
 type LoginLinkedIDType string
