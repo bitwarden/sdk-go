@@ -1022,9 +1022,10 @@ type SecretIdentifiersResponse struct {
 }
 
 type SecretIdentifierResponse struct {
-	ID             string `json:"id"`
-	Key            string `json:"key"`
-	OrganizationID string `json:"organizationId"`
+	ID             string   `json:"id"`
+	Key            string   `json:"key"`
+	OrganizationID string   `json:"organizationId"`
+	ProjectIDS     []string `json:"projectIds"`
 }
 
 type ResponseForSecretResponse struct {
